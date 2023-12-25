@@ -17,6 +17,7 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition: color .3s ease-in-out;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -35,6 +36,7 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition: width .3s ease-in-out, height .3s ease-in-out;
   }
 
   svg {
@@ -89,6 +91,7 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
+  transition: opacity .3s ease-in-out;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -168,6 +171,9 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  opacity: 0;
+  transform: translateY(3px);
+  transition: opacity .5s ease-in-out, transform .3s ease-in-out, color .15s linear;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -185,6 +191,7 @@
   }
 
   &:hover {
+    transition-delay: 0;
     color: $c-purple;
   }
 
@@ -204,6 +211,27 @@
 
   svg {
     @include center;
+  }
+
+  .social-block--active & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .social-block--active .social-block__list li:nth-child(1) & {
+    transition-delay: .15s;
+  }
+
+  .social-block--active .social-block__list li:nth-child(2) & {
+    transition-delay: .25s;
+  }
+
+  .social-block--active .social-block__list li:nth-child(3) & {
+    transition-delay: .35s;
+  }
+
+  .social-block:not(.social-block--active) & {
+    transition-delay: 0;
   }
 
   &--fb {

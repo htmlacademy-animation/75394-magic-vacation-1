@@ -87,6 +87,7 @@
 }
 
 .intro__message {
+  @include fade-in-with-active-screen(0, 10px);
   flex: none;
   width: 50.9rem;
   max-width: 50%;
@@ -136,6 +137,7 @@
 }
 
 .intro__label {
+  @include fade-in-with-active-screen(0, 10px);
   margin: 0 0 1.6rem;
   max-width: 25rem;
   text-transform: uppercase;

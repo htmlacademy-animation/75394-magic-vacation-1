@@ -30,6 +30,7 @@
 }
 
 .form__field {
+  @include fade-in-with-active-screen(10px, 0);
   flex: none;
   margin-right: 3rem;
   padding: 0 5.6rem;
