@@ -91,6 +91,7 @@
 }
 
 .slider__item-text {
+  @include fade-in-with-active-screen(10px, 0);
   margin-top: 3.6rem;
   margin-bottom: 0;
   max-width: 34rem;
